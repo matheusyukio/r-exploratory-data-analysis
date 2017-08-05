@@ -3,9 +3,16 @@ title: "R Notebook"
 output: html_notebook
 ---
 
+
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+ Red Wine Quality - Exploratory Data Analysis
+========================================================
+
+  The dataset is available on <a href="https://www.google.com/url?q=https://s3.amazonaws.com/udacity-hosted-downloads/ud651/wineQualityReds.csv&sa=D&ust=1498100528570000&usg=AFQjCNE9-Ke0SkkDr3IOsMsSI8FcAdvWUQ">Red Wine Quality</a>.<br>
+First, we get a first look at the data about sample size, fields in the dataset.
 
 ```{r}
 # Load all of the packages that you end up using in your analysis in this code
@@ -83,6 +90,16 @@ the percent alcohol content of the wine
 <b>quality</b>: score between 0 and 10<br>
 Output variable, based on sensory data
 <br><br>
+
+
+## Finding max, min median and mean
+>This section explore the summary for each wine component.
+
+```{r echo=FALSE}
+
+summary(wine_data)
+
+```
 
 
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
