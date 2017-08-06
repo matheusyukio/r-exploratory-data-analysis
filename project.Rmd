@@ -101,5 +101,57 @@ summary(wine_data)
 
 ```
 
+# Univariate Plots Section
+
+>The first plot shows the distribution of the alcohol across red wine
+```{r echo=FALSE}
+# Function to plot univariate
+plotFunction <- function(x_value,dataset,Icolor, fillcolor, bin_width, ptitle, xl){
+  ggplot(aes(x=x_value), data = dataset) + 
+  geom_histogram(color=I(Icolor),fill=I(fillcolor),binwidth = bin_width) +
+    ggtitle(ptitle) +
+    xlab(xl) +
+    ylab("count")
+}
+
+plotBoxplotFunction <- function(xval,yval,dataset,apj,apbp,fcolor,xl,yl){
+  ggplot(aes(x=xval,y=yval),data=dataset) +
+    geom_jitter(alpha=apj) +
+    geom_boxplot(alpha=apbp, color = fcolor) +
+    xlab(xl) +
+    ylab(yl)
+}
+
+```
+
+```{r echo=FALSE,message=FALSE, warning=FALSE, Univariate_Plots, fig.height=15, fig.width=15}
+p1 <- plotFunction(wine_data$alcohol,wine_data,'black','red',0.2,
+                   'Alcohol distribution for red wine', 'Alcohol')
+p2 <- plotFunction(wine_data$residual.sugar,wine_data,'black','red',0.5,
+                   'Residual sugar distribution for red wine', 'Residual Sugar')
+p3 <- plotFunction(wine_data$pH,wine_data,'black','red',0.0625,
+                   'pH distribution for red wine', 'pH')
+p4 <- plotFunction(wine_data$quality,wine_data,'black','red',1,
+                   'Quality distribution for red wine', 'Quality')
+p5 <- plotFunction(wine_data$density,wine_data,'black','red',0.0005,
+                   'Density distribution for red wine', 'Density')
+p6 <- plotFunction(wine_data$sulphates,wine_data,'black','red',0.05,
+                   'Sulphates distribution for red wine', 'Sulphate')
+p7 <- plotFunction(wine_data$fixed.acidity,wine_data,'black','red',1,
+                   'Fixed Acidy distribution  for red wine', 'Fixed Acidy')
+p8 <- plotFunction(wine_data$volatile.acidity,wine_data,'black','red',0.05,
+                   'Volatile Acidy distribution  for red wine', 'Volatile Acidy')
+p9 <- plotFunction(wine_data$citric.acid,wine_data,'black','red',0.05,
+                   'Citric Acidy distribution  for red wine', 'Citric Acidy')
+p10 <- plotFunction(wine_data$chlorides,wine_data,'black','red',0.02,
+                   'Chlorides distribution for red wine', 'Chlorides')
+p11 <- plotFunction(wine_data$free.sulfur.dioxide,wine_data,'black','red',5,
+                   'Free Sulfur Dioxide distribution', 'Free Sulfur Dioxide')
+p12 <- plotFunction(wine_data$total.sulfur.dioxide,wine_data,'black','red',5,
+                   'Total Sulfur Dioxide distribution', 'Total Sulfur Dioxide')
+
+grid.arrange(p1,p2,p3,p5,p6,p7,p8,p9,p10,p11,p12,p4, ncol = 2)
+
+```
 
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
