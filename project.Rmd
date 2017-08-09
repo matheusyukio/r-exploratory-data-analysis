@@ -154,4 +154,41 @@ grid.arrange(p1,p2,p3,p5,p6,p7,p8,p9,p10,p11,p12,p4, ncol = 2)
 
 ```
 
+# Bivariate Plots Section
+
+After look at individual plot and summary of each wine property. We can see what relationships between variables might be interesting to look a.
+
+```{r echo=FALSE, Bivariate_Plots}
+#p2_1 <- qplot(x = quality, y = alcohol, data = wine_data, geom = 'boxplot', group = quality)
+#p2_1 <- ggplot(aes(x = factor(quality), y = alcohol), data = wine_data) +
+#          geom_boxplot()
+load("myWorkspace.RData")
+p2_1 <- ggplot(aes(x = quality_factor, y = alcohol), data = wine_data) +
+          geom_boxplot() +
+            xlab("Wine Quality") +
+            ylab("Alcohol")
+p2_2 <- ggplot(aes(x = quality_factor, y = chlorides), data = wine_data) +
+          geom_boxplot() +
+            xlab("Wine Quality") +
+            ylab("Chlorides")
+p2_3 <- ggplot(aes(x = quality_factor, y = residual.sugar), data = wine_data) +
+          geom_boxplot() +
+            xlab("Wine Quality") +
+            ylab("Residual sugar")
+p2_4 <- ggplot(aes(x = quality_factor, y = pH), data = wine_data) +
+          geom_boxplot() +
+            xlab("Wine Quality") +
+            ylab("pH")
+p2_5 <- ggplot(aes(x = quality_factor, y = density), data = wine_data) +
+          geom_boxplot() +
+            xlab("Wine Quality") +
+            ylab("Density")
+p2_6 <- ggplot(aes(x = quality_factor, y = sulphates), data = wine_data) +
+          geom_boxplot() +
+            xlab("Wine Quality") +
+            ylab("Sulphates")
+grid.arrange(p2_1,p2_2,p2_3,p2_4,p2_5,p2_6, ncol = 3)
+```
+
+
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
