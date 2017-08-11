@@ -29,6 +29,27 @@ library(memisc)
 
 ```
 
+
+## Correlation between variables
+>Correlation between the wine components.<br>
+```{r echo=FALSE}
+cor(x=wine_data[,2:12], y = wine_data$quality)
+```
+>
+Scatterplot Matrix.
+```{r, echo=FALSE, fig.height=15, fig.width=15 }
+#opts_chunk$set(out.width='750px', dpi=200)
+library(ggplot2)
+library(GGally)
+theme_set(theme_minimal(20))
+
+# set the seed for reproducible results
+set.seed(1836)
+wine_subset <- wine_data[,2:13]
+names(wine_subset)
+ggpairs(wine_subset[sample.int(nrow(wine_subset), 1000),])
+```
+
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 ```{r}
 # Load the Data
