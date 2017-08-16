@@ -212,4 +212,13 @@ grid.arrange(p2_1,p2_2,p2_3,p2_4,p2_5,p2_6, ncol = 3)
 ```
 
 
+## Correlation between variables
+>Correlation between the wine components.
+```{r echo=FALSE}
+cor(x=wine_data[,2:12], y = wine_data$quality)
+```
+
+>
+
+
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
