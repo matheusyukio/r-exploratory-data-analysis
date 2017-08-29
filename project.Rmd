@@ -263,4 +263,19 @@ grid.arrange(p3_1,p3_2,p3_3,p3_4, ncol=2)
 
 ```
 
+### Plot One
+
+>Plot one is the distribution of Alcohol in the dataset.
+
+```{r echo=FALSE, Plot_One}
+
+p_one <- plotFunction(wine_data$alcohol,wine_data,'black','#bd5b5b',0.2,
+                   'Alcohol distribution for red wine', 'Alcohol')
+bp_one <- plotBoxplotFunction(1,wine_data$alcohol,wine_data,0.1,0.2,"red","","alcohol")
+
+grid.arrange(p_one,bp_one, ncol=2)
+
+summary(wine_data$alcohol)
+```
+
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
